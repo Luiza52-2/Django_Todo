@@ -3,15 +3,12 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 from .models import Task, Category
 from .forms import TaskForm
-from django.db.models.functions import Lower
 
 class TaskListView(ListView):
     model = Task
     template_name = 'tasks/task_list.html'
     context_object_name = 'tasks'
 
-    
-    
     def get_queryset(self):
         queryset = super().get_queryset()
         category_id = self.request.GET.get('category')
@@ -21,8 +18,6 @@ class TaskListView(ListView):
             queryset = queryset.filter(category__id=category_id)
 
         if search_query:
-            # Приводим всё к нижнему регистру в Python (на уровне запроса)
-            search_query = search_query.lower()
             queryset = queryset.filter(
                 Q(title__icontains=search_query) |
                 Q(description__icontains=search_query) |
