@@ -1,0 +1,48 @@
+# Виртуальное окружение
+venv/
+env/
+.venv/
+
+# Python кеши
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Файлы и папки тестов/отладочной информации
+*.log
+*.pot
+*.pyc
+*.pyd
+*.pdb
+
+# Конфигурации IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Секретные настройки
+*.env
+.env.*
+
+# База данных (если используешь SQLite)
+db.sqlite3
+*.sqlite3
+
+# Миграции, сгенерированные автоматически (оставь, если хочешь контролировать вручную)
+# migrations/
+
+# Django файлы
+staticfiles/
+media/
+
+# pyenv / pipenv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
